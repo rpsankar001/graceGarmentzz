@@ -1,0 +1,48 @@
+[
+    {
+        "COD COLLECTIONS": [
+            {
+                "src": "assets/ListingItems/1/favicon.ico",
+                "desc": "",
+                "price": "",
+                "collections": [
+                    {
+                        "src": "assets/ListingItems/1/favicon.ico",
+                        "desc": "test",
+                        "price": "120",
+                        "images":["assets/ListingItems/1/favicon.ico", "assets/ListingItems/2/favicon.ico"]
+                    },
+                    {
+                        "src": "assets/ListingItems/2/favicon.ico",
+                        "desc": "test1",
+                        "price": "120",
+                        "images":["assets/ListingItems/1/favicon.ico", "assets/ListingItems/2/favicon.ico"]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "COD COLLECTIONS2": [
+            {
+                "src": "assets/ListingItems/2/favicon.ico",
+                "desc": "",
+                "price": "",
+                "collections": [
+                    {
+                        "src": "assets/ListingItems/2/favicon.ico",
+                        "desc": "test",
+                        "price": "120",
+                        "images":["assets/ListingItems/1/favicon.ico", "assets/ListingItems/2/favicon.ico"]
+                    },
+                    {
+                        "src": "assets/ListingItems/1/favicon.ico",
+                        "desc": "test1",
+                        "price": "120",
+                        "images":["assets/ListingItems/1/favicon.ico", "assets/ListingItems/2/favicon.ico"]
+                    }
+                ]
+            }
+        ]
+    }
+]

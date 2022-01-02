@@ -1,0 +1,24 @@
+<!-- <div class="container-fluid" style="padding-top:110px">
+    <ngb-carousel *ngIf="images">
+      <ng-template ngbSlide *ngFor="let item of images">
+        <div class="wrapper">
+          <img [src]="item" alt="Random first slide" />
+        </div>
+
+      </ng-template>
+    </ngb-carousel>
+  </div> -->
+  <!-- (slide)="onSlide($event)" -->
+  
+  <ngb-carousel #carousel  style="padding-top:110px"
+    >
+    <ng-template ngbSlide *ngFor="let image of images.list">
+      <div class="picsum-img-wrapper">
+        <img [src]="image.src" alt="Random slide">
+      </div>
+      <!-- <div class="carousel-caption">
+        <h3>No mouse navigation</h3>
+        <p>This carousel hides navigation arrows and indicators.</p>
+      </div> -->
+    </ng-template>
+  </ngb-carousel>

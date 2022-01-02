@@ -1,4 +1,4 @@
-<ngx-slick-carousel class="main-slider slider"  [config]="slideConfig" >
+<!-- <ngx-slick-carousel class="main-slider slider" style="    padding-top: 85px;" [config]="slideConfig" >
     <div ngxSlickItem class="slider-item " style="background-image:url('assets/images/slideshow1-2.jpg')">
       <div class="container">
         <div class="row">
@@ -20,7 +20,7 @@
             <div class="slider-caption">
               <span class="lead">up to 70% off</span>
               <h1 class="mt-2 mb-5"><span class="text-color">Classic</span> Style</h1>
-              <a href="#" class="btn btn-main">Shop Now</a>
+              <a href="#" class="btn btn-main shop-now">Shop Now</a>
             </div>
           </div>
         </div>
@@ -40,7 +40,7 @@
         </div>
       </div>
     </div>
-  </ngx-slick-carousel>
+  </ngx-slick-carousel> -->
   
   <!-- <section class="category section pt-3 pb-0">
     <div class="container">
@@ -97,30 +97,31 @@
             </div>
     
     
-        <div class="row">
-          <div class="col-lg-3 col-12 col-md-6 col-sm-6 mb-5" >
-              <div class="product">
+        <div class="row" >
+          <div class="col-lg-3 col-12 col-md-6 col-sm-6 mb-5" *ngFor="let item of products" >
+              <div class="product" *ngFor="let item1 of item[getObjName(item)]">
                 <div class="product-wrap">
-                    <a routerLink="/product-single"><img class="img-fluid w-100 mb-3 img-first" src="assets/images/322.jpg" alt="product-img" /></a>
-                    <a routerLink="/product-single"><img class="img-fluid w-100 mb-3 img-second" src="assets/images/444.jpg" alt="product-img" /></a>
+                    <a (click)="navigateToCollections(item1.collections, getObjName(item))"><img class="img-fluid w-100 mb-3 img-first" src="{{item1.src}}" alt="product-img" /></a>
+                    <!-- hover change -->
+                    <a (click)="navigateToCollections(item1.collections, getObjName(item))"><img class="img-fluid w-100 mb-3 img-second" src="{{item1.src}}" alt="product-img" /></a>
                 </div>
     
-                <span class="onsale">Sale</span>
+                <!-- <span class="onsale">Sale</span>
                 <div class="product-hover-overlay">
                     <a href="#"><i class="tf-ion-android-cart"></i></a>
                     <a href="#"><i class="tf-ion-ios-heart"></i></a>
-                  </div>
+                  </div> -->
     
                 <div class="product-info">
-                    <h2 class="product-title h5 mb-0"><a href="#">Floral Kirby</a></h2>
-                    <span class="price">
+                    <h2 class="product-title h5 mb-0"><a href="#">{{getObjName(item)}}</a></h2>
+                    <!-- <span class="price">
                         $329.10
-                    </span>
+                    </span> -->
                 </div>
             </div>
           </div>
     
-          <div class="col-lg-3 col-12 col-md-6 col-sm-6 mb-5">
+          <!-- <div class="col-lg-3 col-12 col-md-6 col-sm-6 mb-5">
             <div class="product">
                 <div class="product-wrap">
                     <a routerLink="/product-single"><img class="img-fluid w-100 mb-3 img-first" src="assets/images/111.jpg" alt="product-img" /></a>
@@ -139,9 +140,9 @@
                     </span>
                 </div>
             </div>
-          </div>
+          </div> -->
     
-          <div class="col-lg-3 col-12 col-md-6 col-sm-6 mb-5" >
+          <!-- <div class="col-lg-3 col-12 col-md-6 col-sm-6 mb-5" >
             <div class="product">
                 <div class="product-wrap">
                     <a routerLink="/product-single"><img class="img-fluid w-100 mb-3 img-first" src="assets/images/222.jpg" alt="product-img" /></a>
@@ -161,9 +162,9 @@
                     </span>
                 </div>
             </div>
-          </div>
+          </div> -->
     
-          <div class="col-lg-3 col-12 col-md-6 col-sm-6 mb-5">
+          <!-- <div class="col-lg-3 col-12 col-md-6 col-sm-6 mb-5">
             <div class="product">
                 <div class="product-wrap">
                     <a routerLink="/product-single"><img class="img-fluid w-100 mb-3 img-first" src="assets/images/322.jpg" alt="product-img" /></a>
@@ -182,9 +183,9 @@
                     </span>
                 </div>
             </div>
-          </div>
+          </div> -->
     
-          <div class="col-lg-3 col-12 col-md-6 col-sm-6 mb-5">
+          <!-- <div class="col-lg-3 col-12 col-md-6 col-sm-6 mb-5">
             <div class="product">
                 <div class="product-wrap">
                     <a href="#"><img class="img-fluid w-100 mb-3 img-first" src="assets/images/444.jpg" alt="product-img" /></a>
@@ -203,9 +204,9 @@
                     </span>
                 </div>
             </div>
-          </div>
+          </div> -->
     
-          <div class="col-lg-3 col-12 col-md-6 col-sm-6 mb-5" >
+          <!-- <div class="col-lg-3 col-12 col-md-6 col-sm-6 mb-5" >
             <div class="product">
                 <div class="product-wrap">
                     <a href="#"><img class="img-fluid w-100 mb-3 img-first" src="assets/images/322.jpg" alt="product-img" /></a>
@@ -224,9 +225,9 @@
                     </span>
                 </div>
             </div>
-          </div>
+          </div> -->
     
-          <div class="col-lg-3 col-12 col-md-6 col-sm-6 mb-5 " >
+          <!-- <div class="col-lg-3 col-12 col-md-6 col-sm-6 mb-5 " >
             <div class="product">
                 <div class="product-wrap">
                     <a href="#"><img class="img-fluid w-100 mb-3 img-first" src="assets/images/111.jpg" alt="product-img" /></a>
@@ -245,8 +246,8 @@
                     </span>
                 </div>
             </div>
-          </div>
-    
+          </div> -->
+<!--     
          <div class="col-lg-3 col-12 col-md-6 col-sm-6 mb-5 " >
             <div class="product">
                 <div class="product-wrap">
@@ -267,7 +268,7 @@
                     </span>
                 </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </section>

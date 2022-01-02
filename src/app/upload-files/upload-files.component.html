@@ -1,0 +1,46 @@
+<div style="padding-top: 85px">
+  <div class="file-upload">
+    <input type="file" hidden id="test" (change)="selectFile($event)" />
+    <label for="test" class="file-upload-btn"> Add Image</label>
+    <!-- Add Image -->
+
+    <!-- <div class="image-upload-wrap">
+      <input
+        class="file-upload-input"
+        type="file"
+        (change)="selectFile($event)"
+        accept="image/*"
+      />
+      <div class="drag-text">
+        <h3>Drag and drop a file or select add Image</h3>
+      </div>
+    </div> -->
+    <div class="file-upload-content">
+      <img *ngIf="imgLink" class="file-upload-image" [src]="imgLink" />
+      <div class="image-title-wrap">
+        <button
+          type="button"
+          *ngIf="imgLink"
+          (click)="removeUpload()"
+          class="remove-image"
+        >
+          Remove <span class="image-title">Uploaded Image</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="form-group purple-border">
+        <label for="txt" >Price</label>
+        <input type="text" [(ngModel)]="price" class="form-control" id="txt" rows="3">
+      </div>
+
+    <div class="form-group purple-border">
+      <label for="txtarea" >Image Description</label>
+      <textarea class="form-control" id="txtarea" [(ngModel)]="description" rows="3"></textarea>
+    </div>
+
+    <button type="button" (click)="upload()" class="btn btn-primary">
+      Upload Details
+    </button>
+  </div>
+</div>
