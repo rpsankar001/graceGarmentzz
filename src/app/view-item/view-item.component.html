@@ -8,13 +8,17 @@
       </ng-template>
     </ngb-carousel>
   </div> -->
-  <!-- (slide)="onSlide($event)" -->
-  
-  <ngb-carousel #carousel  style="padding-top:110px"
-    >
+<!-- (slide)="onSlide($event)" -->
+<div class="container-fluid">
+  <ngb-carousel
+    #carousel
+    style="padding-top: 110px"
+    [interval]="0"
+    (slide)="onSlide($event)"
+  >
     <ng-template ngbSlide *ngFor="let image of images.list">
       <div class="picsum-img-wrapper">
-        <img [src]="image.src" alt="Random slide">
+        <img [src]="image.src" style="max-height: 250px;" alt="Random slide" />
       </div>
       <!-- <div class="carousel-caption">
         <h3>No mouse navigation</h3>
@@ -22,3 +26,18 @@
       </div> -->
     </ng-template>
   </ngb-carousel>
+  <div class="row">
+    <div style="width: 7%" *ngFor="let item of prodListingImages">
+      <div class="product">
+        <div class="product-wrap">
+          <a
+            ><img
+              class="img-fluid w-100 mb-3 img-first"
+              src="{{ item }}" (click)="viewImage()"
+              alt="product-img"
+          /></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

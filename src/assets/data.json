@@ -39,7 +39,7 @@
                         "src": "assets/ListingItems/1/favicon.ico",
                         "desc": "test1",
                         "price": "120",
-                        "images":["assets/ListingItems/1/favicon.ico", "assets/ListingItems/2/favicon.ico"]
+                        "images":["assets/ListingItems/1/favicon.ico", "assets/ListingItems/1/favicon.ico"]
                     }
                 ]
             }

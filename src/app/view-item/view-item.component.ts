@@ -6,12 +6,13 @@ import { CommonService } from '../services/common.service';
   selector: 'app-view-item',
   templateUrl: './view-item.component.html',
   styleUrls: ['./view-item.component.scss'],
-  providers: [NgbCarouselConfig] 
+  providers: [NgbCarouselConfig],
 })
 export class ViewItemComponent implements OnInit {
   images: any;
   showNavigationArrows = true;
   showNavigationIndicators = true;
+  prodListingImages: any;
   constructor(private service: CommonService, config: NgbCarouselConfig) {
     // config.interval = 2000;
     config.keyboard = true;
@@ -20,6 +21,13 @@ export class ViewItemComponent implements OnInit {
 
   ngOnInit(): void {
     this.images = this.service.getCollections();
-    console.log(this.images)
+    this.onSlide({ current: 'ngb-slide-0' });
   }
+
+  onSlide(event: any) {
+    console.log(event);
+    const index = Number(event.current.split('ngb-slide-')[1]);
+    this.prodListingImages = Object.assign([], this.images.list[index].images);
+  }
+  viewImage() {}
 }

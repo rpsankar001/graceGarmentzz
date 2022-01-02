@@ -2,3 +2,6 @@
     background-color: black;
     border: none;
 }
+::ng-deep .img-fluid{
+    max-height: 250px;
+}
